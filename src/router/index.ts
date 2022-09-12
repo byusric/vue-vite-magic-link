@@ -71,7 +71,7 @@ router.beforeResolve(async (routeTo, routeFrom, next) => {
   } catch (error) {
     return;
   }
-  document.title = routeTo.meta.title + ' | ';
+  document.title = routeTo.meta.title + ' | ' + import.meta.env.VITE_APP_TITLE;
   // If we reach this point, continue resolving the route.
   next();
 });
