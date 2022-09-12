@@ -11,27 +11,22 @@ router.beforeEach(async (to, from, next) => {
   const auth = useAuthStore()
 
   if(!auth.data && !!to.meta?.authRequired){
-   try {
-    await useAuthStore().getData()
-   } catch (error) {
-    console.log(error);
-   }
+    try {
+      await useAuthStore().getData()
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  if (!!to.meta?.authRequired) {
-    if(!!auth.data){
-      next()
-    }else{
-      next({name:'login'})
-    }
-  } else {
-    if(!auth.data){
-      next()
-    }else{
-      next({name:'dashboard'})
-    }
+  if(!!to.meta?.authRequired && !auth?.data){
+    next({name:'login'})
+  }else if(!to.meta?.authRequired && !!auth?.data){
+    next({name:'dashboard'})
+  }else if(!!to.meta?.redirect){
+    next({name:to.meta.redirect})
+  }else{
+    next()
   }
-  next()  
 })
 
 

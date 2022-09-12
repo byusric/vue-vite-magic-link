@@ -17,7 +17,7 @@ export const useAuthStore = defineStore<any, 'auth'>('auth', {
     async login (email:string|undefined)  {
             this.loading = true
       const redirectURI = `${window.location.origin}/`;
-      await auth.auth.loginWithMagicLink({ email, redirectURI });
+      await auth.auth.loginWithMagicLink({ email });
       await this.getData()
       this.loading = false
       router.push('/')
@@ -31,9 +31,10 @@ export const useAuthStore = defineStore<any, 'auth'>('auth', {
     },
     async getData (){
       this.data = await auth.user.getMetadata();
+
       if(this.data?.publicAddress){
         this.address = this.data.address
-        this.balance = web3.utils.fromWei(await web3.eth.getBalance(this.data?.publicAddress))
+        this.balance = await web3.utils.fromWei(await web3.eth.getBalance(this.data?.publicAddress))
       }
     },
 
