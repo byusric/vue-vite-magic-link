@@ -44,13 +44,15 @@ export const useAuthStore = defineStore<any, 'auth'>('auth', {
     },
     async getCount(){
      const res = await contract.methods.getCount().call();
-     console.log(res);
      this.count = res
      return res
     },
     async increment(){
       this.loading = true
-      await contract.methods.increment().send({from:(await web3.eth.getAccounts())[0] }).then(()=>{this.getCount()});
+      await contract.methods.increment().send({from:(await web3.eth.getAccounts())[0] }).then(async ()=>{
+        await this.getCount()
+        await this.getData()
+      });
       this.loading = false
     }
   },
