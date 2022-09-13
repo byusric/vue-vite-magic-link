@@ -3,15 +3,8 @@
  <div class="w-full h-screen bg-slate-500 flex flex-col items-center justify-center border">
     <div class="flex flex-col w-1/4 border p-4 gap-2 rounded">
       Login
-      <form @submit.prevent="tryLogin" class="flex flex-col w-full gap-2">
-        <input type="email" name="email" id="email" v-model="email" class="w-full rounded h-6" required/>
-        <button type="submit" class="bg-slate-700 rounded text-white flex justify-between p-1 items-center">
-          <LoadingSpinner v-if="loading" />
-          <div v-else></div>
-         <div>Submit</div>
-         <div></div>
-        </button>
-      </form>
+      <button type="button" @click="loginWallet" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Login with Wallet</button>            
+      <router-link to="/create-user">Create User</router-link>
     </div>
  </div>
 </template>
@@ -22,6 +15,8 @@
   import {useAuthStore} from '@/stores/auth';
   import { SDKError, RPCError, ExtensionError } from 'magic-sdk';
   import LoadingSpinner from '../components/loadingSpinner.vue';
+
+  const {loginWallet}=useAuthStore()
 
   const email = ref('')
   const loading = ref(false)

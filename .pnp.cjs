@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-typescript", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:11.0.1"],\
             ["@vue/tsconfig", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:0.1.3"],\
             ["autoprefixer", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:10.4.8"],\
+            ["axios", "npm:0.27.2"],\
             ["eslint", "npm:8.23.0"],\
             ["eslint-plugin-vue", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:9.4.0"],\
             ["magic-sdk", "npm:9.0.0"],\
@@ -2196,6 +2197,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["axios", [\
+        ["npm:0.27.2", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.27.2-dbe3a48aea-38cb754046.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:0.27.2"],\
+            ["follow-redirects", "virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.2"],\
+            ["form-data", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["balanced-match", [\
         ["npm:1.0.2", {\
           "packageLocation": "./.yarn/cache/balanced-match-npm-1.0.2-a53c126459-9706c088a2.zip/node_modules/balanced-match/",\
@@ -4335,6 +4347,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["follow-redirects", [\
+        ["npm:1.15.2", {\
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.2-1ec1dd82be-faa66059b6.zip/node_modules/follow-redirects/",\
+          "packageDependencies": [\
+            ["follow-redirects", "npm:1.15.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.2", {\
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-42073a9d6a/0/cache/follow-redirects-npm-1.15.2-1ec1dd82be-faa66059b6.zip/node_modules/follow-redirects/",\
+          "packageDependencies": [\
+            ["follow-redirects", "virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.2"],\
+            ["@types/debug", null],\
+            ["debug", null]\
+          ],\
+          "packagePeers": [\
+            "@types/debug",\
+            "debug"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["for-each", [\
         ["npm:0.3.3", {\
           "packageLocation": "./.yarn/cache/for-each-npm-0.3.3-0010ca8cdd-6c48ff2bc6.zip/node_modules/for-each/",\
@@ -4359,6 +4393,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/form-data-npm-2.3.3-c016cc11c0-10c1780fa1.zip/node_modules/form-data/",\
           "packageDependencies": [\
             ["form-data", "npm:2.3.3"],\
+            ["asynckit", "npm:0.4.0"],\
+            ["combined-stream", "npm:1.0.8"],\
+            ["mime-types", "npm:2.1.35"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/form-data-npm-4.0.0-916facec2d-01135bf867.zip/node_modules/form-data/",\
+          "packageDependencies": [\
+            ["form-data", "npm:4.0.0"],\
             ["asynckit", "npm:0.4.0"],\
             ["combined-stream", "npm:1.0.8"],\
             ["mime-types", "npm:2.1.35"]\
@@ -8496,6 +8540,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-typescript", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:11.0.1"],\
             ["@vue/tsconfig", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:0.1.3"],\
             ["autoprefixer", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:10.4.8"],\
+            ["axios", "npm:0.27.2"],\
             ["eslint", "npm:8.23.0"],\
             ["eslint-plugin-vue", "virtual:5d031aa803ae9ec5939b42dd63d9aeb2e971261690fce2fa69e697059912ee03071f7de08b9bbc91d94c573645380822369dadfca6a9f61c38c74e317ddfec2a#npm:9.4.0"],\
             ["magic-sdk", "npm:9.0.0"],\

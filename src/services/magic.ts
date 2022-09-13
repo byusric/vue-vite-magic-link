@@ -7,8 +7,9 @@ export const auth = new Magic(import.meta.env.VITE_MAGIC_AUTH_KEY,{
     network:'rinkeby'
 });
 
-export const connect = new Magic(import.meta.env.VITE_MAGIC_AUTH_KEY,{
-    extensions: [new ConnectExtension()]
+export const connect = new Magic(import.meta.env.VITE_MAGIC_CONNECT_KEY,{
+    extensions: [new ConnectExtension()],
+    network:'rinkeby'
 });
 
-export const web3 = new Web3(auth.rpcProvider)
+export const web3 = new Web3(connect.rpcProvider)

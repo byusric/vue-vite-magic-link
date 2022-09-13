@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@magic-ext/connect": "^2.0.2",
+    "axios": "^0.27.2",
     "magic-sdk": "^9.0.0",
     "pinia": "^2.0.21",
     "process": "^0.11.10",

@@ -10,17 +10,23 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const auth = useAuthStore()
 
-  if(!auth.data && !!to.meta?.authRequired){
-    try {
-      await useAuthStore().getData()
-    } catch (error) {
-      console.log(error);
-    }
+  // if(!auth.data && !!to.meta?.authRequired){
+  //   try {
+  //     await useAuthStore().getData()
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  const token = localStorage.getItem('APP_TOKEN')
+
+  if (!!token) {
+    auth.access_token = token
   }
 
-  if(!!to.meta?.authRequired && !auth?.data){
+  if(!!to.meta?.authRequired && !auth?.access_token){
     next({name:'login'})
-  }else if(!to.meta?.authRequired && !!auth?.data){
+  }else if(!to.meta?.authRequired && !!auth?.access_token){
     next({name:'dashboard'})
   }else if(!!to.meta?.redirect){
     next({name:to.meta.redirect})

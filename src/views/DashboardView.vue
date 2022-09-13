@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-gray-800">
+  <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -19,10 +19,6 @@
     </div>
   </nav>
   <div class="flex flex-col w-full h-screen bg-slate-500 p-4">
-    <div class="text-lg">email: {{data?.email}}</div>
-    <div class="text-lg">address: {{data?.publicAddress}}</div>
-    <div class="text-lg">balance: {{balance}}</div>
-
     <div class="text-4xl mt-4 flex flex-col items-center justify-center">
       <div>
         Count: {{count}}
@@ -42,7 +38,7 @@
   import LoadingSpinner from '../components/LoadingSpinner.vue';
 
   const {logout,wallet,getCount,increment}=useAuthStore()
-  const {count,data,loading,balance}=storeToRefs(useAuthStore())
+  const {count,loading}=storeToRefs(useAuthStore())
 
   onMounted(()=>{
     getCount()
